@@ -1,0 +1,28 @@
+catalog:
+  prefix: catalog
+  repos:
+    - api
+    - api-minion
+approval:
+  prefix: approval
+  repos:
+    - api
+    - process
+sources:
+  prefix: sources
+  repos:
+    - api
+    - monitor
+topological-inventory:
+  prefix: topological_inventory
+  repos:
+  - ansible_tower
+  - api
+  - azure
+  - amazon
+  - openshift
+  - persister
+  - satellite
+  - orchestrator
+  - ingress_api
+  - sync

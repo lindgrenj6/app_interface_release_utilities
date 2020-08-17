@@ -3,7 +3,7 @@
 BRANCH=${BRANCH:-stable}
 
 for repo in $REPOS ; do
-    echo -en "$repo: "
+    echo -en "$repo${SEPARATOR:-": "}"
     gh api repos/RedHatInsights/$PREFIX-$repo/commits/$BRANCH | \
         jq .sha   | \
         tr -d '"' | \
