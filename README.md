@@ -5,7 +5,7 @@
 - jq (json cli processor)
 - awk (black magic witchcraft language that you only see in hacky stuff like this)
 
-1) get_all_topo_shas.sh
+1) `get_all_$(app)_shas.sh`
 
 Run this to get the sha's to stick in your deploy.yml. 
 Output is similar to this: 
