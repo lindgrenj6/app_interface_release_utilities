@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 BRANCH=${BRANCH:-stable}
+echo "Branch: ${BRANCH}"
 
 for repo in $REPOS ; do
     echo -en "$repo${SEPARATOR:-": "}"
