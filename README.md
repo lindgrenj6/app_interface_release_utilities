@@ -40,3 +40,11 @@ It basically creates PRs with arg 1 as the commit message, and arg 2 as the PR m
 This is a **very heavy** work in progress that will automatically update all of the SHA tags for $ENV in the $APPLICATION deploy.yml files.     
 
 **Don't use it it doesn't work yet.**
+
+4) `bundle_all.sh`
+
+Simple one, this one goes through and finds all the Gemfiles in subdirectories and runs:   
+
+`bundle update && bundle clean`   
+
+in each. Easy but useful!
