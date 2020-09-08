@@ -48,3 +48,16 @@ Simple one, this one goes through and finds all the Gemfiles in subdirectories a
 `bundle update && bundle clean`   
 
 in each. Easy but useful!
+
+5) `inspect.sh`
+
+This one allows you to look at a specific file running on OCP so you can see what changes are there. 
+The arguments are:
+1) regex to match the running deployment, e.g. to match topological-inventory-ansible-tower-operations `tower-op` would work
+2) the file to inspect, starting at the web root (which is usually just the rails root or the beginning of the project)
+
+Example:  
+
+`inspect.sh tower-op lib/topological_inventory/ansible_tower/operations/applied_inventories/parser.rb`
+
+Will print out that file pulling the running image from whichever namespace you are in, useful for checking if stage/prod have changes!
