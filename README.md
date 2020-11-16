@@ -61,3 +61,46 @@ Example:
 `inspect.sh tower-op lib/topological_inventory/ansible_tower/operations/applied_inventories/parser.rb`
 
 Will print out that file pulling the running image from whichever namespace you are in, useful for checking if stage/prod have changes!
+
+6) `fancylog.sh`
+
+Takes logs from an argument and pipes them through jq, makes it a lot easier to view logs.
+
+Example:
+
+`fancylog.sh sources-api` gives a stream like this:
+
+```json
+{
+  "@timestamp": "2020-11-16T16:48:19.961939 ",
+  "hostname": "sources-api-774b8d79cc-8lc7d",
+  "pid": 34,
+  "tid": "2ab3d560e5c4",
+  "level": "info",
+  "message": "Started GET \"/api/sources/v1.0/application_types?filter%5Bname%5D=/insights/platform/cost-management\" for 10.129.16.12 at 2020-11-16 16:48:19 +0000"
+}
+{
+  "@timestamp": "2020-11-16T16:48:19.966673 ",
+  "hostname": "sources-api-774b8d79cc-8lc7d",
+  "pid": 34,
+  "tid": "2ab3d560e5c4",
+  "level": "info",
+  "message": "Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 1.1ms)"
+}
+{
+  "@timestamp": "2020-11-16T16:48:29.834963 ",
+  "hostname": "sources-api-774b8d79cc-8lc7d",
+  "pid": 34,
+  "tid": "2ab3d560e844",
+  "level": "info",
+  "message": "Started GET \"/health\" for 10.128.16.1 at 2020-11-16 16:48:29 +0000"
+}
+{
+  "@timestamp": "2020-11-16T16:48:29.851660 ",
+  "hostname": "sources-api-774b8d79cc-8lc7d",
+  "pid": 34,
+  "tid": "2ab3d560e844",
+  "level": "info",
+  "message": "Completed 200 OK in 16ms (ActiveRecord: 0.0ms)"
+}
+```
